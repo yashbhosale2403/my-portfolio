@@ -1,0 +1,855 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Yash Bhosale — Cybersecurity · Web Developer · Founder</title>
+  <meta name="description" content="Yash Bhosale — Cybersecurity student & web developer. Founder of Tapeflicker. Projects: AGRI MITRA, LIFI. Skills: Python, Django, Ethical Hacking, CTF. Available for hire." />
+  <meta name="author" content="Yash Bhosale" />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+  <meta name="theme-color" content="#071026" />
+
+  <!-- OpenGraph / Social -->
+  <meta property="og:title" content="Yash Bhosale — Cybersecurity & Web Developer" />
+  <meta property="og:description" content="Founder of Tapeflicker. B.E. IT (IIIT Pune). Penetration testing, Python/Django, full-stack web dev, CTFs." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="" />
+  <meta property="og:url" content="" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Yash Bhosale",
+    "url": "",
+    "sameAs": [],
+    "jobTitle": "Cybersecurity Student & Web Developer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Tapeflicker"
+    }
+  }
+  </script>
+
+  <style>
+    /* ===========================
+       Reset & base
+       =========================== */
+    :root{
+      --bg:#041427;
+      --card:#071026;
+      --muted:#98a8bf;
+      --accent:#5eead4;
+      --accent-2:#60a5fa;
+      --glass: rgba(255,255,255,0.03);
+      --glass-2: rgba(255,255,255,0.04);
+      --white:#e6eef8;
+      --radius:16px;
+      --max-width:1200px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#021723 0%, #041427 60%);color:var(--white);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+    a{color:inherit}
+    .container{max-width:var(--max-width);margin:36px auto;padding:28px}
+    .wrap{display:grid;grid-template-columns:1fr 340px;gap:28px;align-items:start}
+    @media (max-width:1000px){ .wrap{grid-template-columns:1fr} }
+
+    /* ===========================
+       Header / Nav
+       =========================== */
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:10px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{
+      width:64px;height:64px;border-radius:14px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:flex;align-items:center;justify-content:center;font-weight:800;color:#021219;font-size:20px;
+      box-shadow:0 8px 30px rgba(2,6,23,0.6);
+    }
+    .brand .meta{line-height:1}
+    .brand h1{margin:0;font-size:20px}
+    .brand p{margin:0;font-size:12px;color:var(--muted)}
+
+    nav{display:flex;gap:10px;align-items:center}
+    nav a{display:inline-block;padding:8px 12px;border-radius:10px;font-weight:600;text-decoration:none;color:var(--muted)}
+    nav a:hover{color:var(--accent);background:rgba(255,255,255,0.02)}
+
+    .nav-toggle{display:none}
+    @media (max-width:760px){
+      nav{display:none}
+      .nav-toggle{display:inline-flex}
+    }
+
+    /* ===========================
+       Hero
+       =========================== */
+    .hero{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius); padding:28px; box-shadow: 0 10px 40px rgba(2,6,23,0.6); border:1px solid rgba(255,255,255,0.03);
+    }
+    .hero-grid{display:grid;grid-template-columns:1fr 260px;gap:20px;align-items:center}
+    @media (max-width:900px){ .hero-grid{grid-template-columns:1fr} }
+    .hello{font-size:14px;color:var(--muted);margin-bottom:8px}
+    .title{font-size:30px;margin:0;line-height:1.05}
+    .title .accent{color:var(--accent)}
+    .lead{margin-top:12px;color:var(--muted);font-size:15px}
+    .hero-cta{display:flex;gap:12px;margin-top:16px}
+    .btn{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#042123;padding:10px 14px;border-radius:12px;text-decoration:none;font-weight:700;box-shadow:0 8px 18px rgba(5,10,20,0.6)}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:9px 14px;border-radius:12px;color:var(--muted);font-weight:700}
+
+    .hero-stats{display:flex;flex-direction:column;gap:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));padding:18px;border-radius:12px}
+    .stat{display:flex;flex-direction:column}
+    .stat strong{font-size:20px}
+    .stat span{font-size:12px;color:var(--muted)}
+
+    /* ===========================
+       Panels & cards
+       =========================== */
+    .panel{background:var(--card);padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 8px 30px rgba(2,6,23,0.5)}
+    .section-title{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}
+    .section-title h2{margin:0;font-size:18px}
+    .section-title p{margin:0;color:var(--muted);font-size:13px}
+
+    /* ===========================
+       About & Experience
+       =========================== */
+    .about-grid{display:grid;grid-template-columns:1fr 320px;gap:20px}
+    @media (max-width:900px){ .about-grid{grid-template-columns:1fr} }
+    .bio p{color:var(--muted);margin-top:8px}
+    .facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .fact{background:var(--glass);padding:10px;border-radius:10px;color:var(--muted);font-weight:700;font-size:13px}
+
+    /* timeline */
+    .timeline{display:flex;flex-direction:column;gap:10px}
+    .tl-item{display:flex;gap:12px;align-items:flex-start}
+    .tl-date{min-width:90px;color:var(--muted);font-size:13px}
+    .tl-body h4{margin:0;font-size:14px}
+    .tl-body p{margin:6px 0 0;color:var(--muted);font-size:13px}
+
+    /* ===========================
+       Services / Skills
+       =========================== */
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    @media (max-width:900px){ .services{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width:560px){ .services{grid-template-columns:1fr} }
+    .service{background:var(--glass);padding:14px;border-radius:12px}
+    .service h4{margin:0 0 6px 0}
+    .skill-bar{height:10px;background:rgba(255,255,255,0.03);border-radius:999px;overflow:hidden;margin-top:8px}
+    .skill-bar .fill{height:100%;width:0%;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--accent-2));transition:width 900ms ease}
+
+    /* ===========================
+       Projects (filterable + modal)
+       =========================== */
+    .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    @media (max-width:1000px){ .projects-grid{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width:640px){ .projects-grid{grid-template-columns:1fr} }
+    .project-card{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);cursor:pointer;display:flex;flex-direction:column;gap:10px}
+    .project-card h3{margin:0;font-size:15px}
+    .project-card p{margin:0;color:var(--muted);font-size:13px}
+    .project-tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.02);font-size:12px;color:var(--muted)}
+
+    /* modal */
+    .modal-backdrop{position:fixed;inset:0;background:rgba(2,6,23,0.65);display:none;align-items:center;justify-content:center;z-index:80}
+    .modal{background:linear-gradient(180deg,#071026,#07132a);max-width:900px;width:94%;border-radius:12px;padding:20px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 20px 60px rgba(2,6,23,0.8)}
+    .modal .close{position:absolute;right:18px;top:18px;border:none;background:transparent;color:var(--muted);font-size:20px;cursor:pointer}
+
+    /* ===========================
+       Case studies & testimonials
+       =========================== */
+    .case-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    @media (max-width:900px){ .case-grid{grid-template-columns:1fr} }
+    .case{background:var(--glass);padding:14px;border-radius:12px}
+    .testimonial{background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:12px;border-radius:12px;display:flex;gap:12px;align-items:flex-start}
+    .quote{font-size:13px;color:var(--muted)}
+
+    /* ===========================
+       Blog preview
+       =========================== */
+    .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    @media (max-width:1000px){ .blog-grid{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width:640px){ .blog-grid{grid-template-columns:1fr} }
+    .post{background:var(--glass);padding:12px;border-radius:12px}
+    .post h4{margin:0 0 6px 0}
+
+    /* ===========================
+       Contact & footer
+       =========================== */
+    .contact-grid{display:grid;grid-template-columns:1fr 320px;gap:18px}
+    @media (max-width:900px){ .contact-grid{grid-template-columns:1fr} }
+
+    form label{display:block;font-size:13px;margin:8px 0;color:var(--muted)}
+    input, textarea, select {width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:var(--white);outline:none}
+    textarea{min-height:120px;resize:vertical}
+    .small{font-size:13px;color:var(--muted)}
+    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* ===========================
+       Utilities & micro-interactions
+       =========================== */
+    .pill{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);font-weight:700;color:var(--muted);font-size:13px}
+    .flex{display:flex;gap:12px;align-items:center}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .muted{color:var(--muted)}
+    .hidden{display:none!important}
+
+    /* focus outlines for accessibility */
+    :focus{outline:2px solid rgba(94,234,212,0.18);outline-offset:3px}
+  </style>
+</head>
+<body>
+  <div class="container" id="top">
+    <header>
+      <div class="brand" aria-label="Brand">
+        <div class="logo" aria-hidden="true">YB</div>
+        <div class="meta">
+          <h1>Yash Bhosale</h1>
+          <p>Cybersecurity • Web Developer • Founder of Tapeflicker</p>
+        </div>
+      </div>
+
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#case-studies">Case Studies</a>
+        <a href="#skills">Skills</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="nav-toggle pill" aria-expanded="false" aria-controls="mobileNav" id="mobileToggle">Menu</button>
+    </header>
+
+    <main class="wrap" role="main">
+      <!-- LEFT COLUMN: Main content -->
+      <section>
+        <!-- HERO -->
+        <article class="hero" aria-labelledby="heroTitle">
+          <div class="hero-grid">
+            <div>
+              <div class="hello">Hello — I'm available for serious opportunities</div>
+              <h2 id="heroTitle" class="title">I'm <span class="accent">Yash Bhosale</span> — a cybersecurity student & web developer building secure apps, tools and products.</h2>
+              <p class="lead">B.E. Information Technology (IIIT Pune, 2022–2026). I build Python/Django applications, security tooling for red-team learning, IoT proofs-of-concept (AGRI MITRA, LIFI), and I founded the EdTech startup Tapeflicker.</p>
+
+              <div class="hero-cta" role="region" aria-label="Call to action">
+                <a class="btn" href="#contact">Hire me</a>
+                <a class="btn-ghost" href="#projects">View projects</a>
+                <a class="btn-ghost" href="#" id="downloadResumeBtn">Download CV</a>
+                <a class="btn-ghost" href="#blog">Read blog</a>
+              </div>
+
+              <div style="margin-top:18px" class="small muted">
+                Based in India • Open to internships, freelance & product collaborations
+              </div>
+            </div>
+
+            <aside class="hero-stats" aria-label="Quick stats">
+              <div class="stat">
+                <strong>Founder</strong>
+                <span class="small muted">Tapeflicker — EdTech product</span>
+              </div>
+              <div class="stat">
+                <strong>CTF & PenTest</strong>
+                <span class="small muted">Red team fundamentals, TryHackMe rooms</span>
+              </div>
+              <div class="stat">
+                <strong>Languages</strong>
+                <span class="small muted">Python • JS • SQL • Bash</span>
+              </div>
+            </aside>
+          </div>
+        </article>
+
+        <!-- ABOUT -->
+        <section id="about" class="panel" aria-labelledby="aboutTitle" style="margin-top:18px">
+          <div class="section-title">
+            <h2 id="aboutTitle">About me</h2>
+            <p class="small muted">Background, experience & what I work on</p>
+          </div>
+
+          <div class="about-grid">
+            <div class="bio">
+              <p>I am pursuing a B.E. in Information Technology from IIIT Pune (2022–2026) and have deep interest and hands-on experience in cybersecurity, web development and product building. I founded <strong>Tapeflicker</strong>, worked on IoT/embedded proofs (AGRI MITRA, LIFI) and developed Python-based security tools used while learning penetration testing and CTFs.</p>
+
+              <div class="facts" style="margin-top:12px">
+                <div class="fact">CompTIA Security+</div>
+                <div class="fact">Google Cybersecurity Certificate</div>
+                <div class="fact">Ethical Hacking Essentials (EC-Council)</div>
+                <div class="fact">Django & Flask</div>
+                <div class="fact">Penetration Testing</div>
+                <div class="fact">Project Leadership</div>
+              </div>
+
+              <h3 style="margin-top:16px">What I enjoy</h3>
+              <ul style="color:var(--muted)">
+                <li>Designing secure backend APIs and services (Django + REST).</li>
+                <li>Building automation & tooling for security workflows.</li>
+                <li>Teaching and mentoring peers in CTFs and red-team exercises.</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="panel">
+                <h3 style="margin:0 0 8px 0">Experience timeline</h3>
+                <div class="timeline" aria-hidden="false" style="margin-top:10px">
+                  <div class="tl-item">
+                    <div class="tl-date">2024 — 2025</div>
+                    <div class="tl-body">
+                      <h4>Diploma — Cybersecurity (CRAW Security)</h4>
+                      <p class="muted">Focused on fundamentals, attack lifecycle and defensive controls.</p>
+                    </div>
+                  </div>
+
+                  <div class="tl-item">
+                    <div class="tl-date">2023 — Present</div>
+                    <div class="tl-body">
+                      <h4>Founder & CEO — Tapeflicker</h4>
+                      <p class="muted">Leading product strategy, developing the MVP and coordinating the team.</p>
+                    </div>
+                  </div>
+
+                  <div class="tl-item">
+                    <div class="tl-date">2022 — Present</div>
+                    <div class="tl-body">
+                      <h4>IIIT Pune — B.E. Information Technology</h4>
+                      <p class="muted">Computer networks, software engineering and security-related coursework.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div style="margin-top:12px" class="panel">
+                <h3 style="margin:0 0 8px 0">Certifications</h3>
+                <div class="small muted">Google Cybersecurity Professional Certificate, CompTIA Security+, EC-Council E|HE, multiple hands-on training modules & workshops.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section class="panel" style="margin-top:18px" aria-labelledby="servicesTitle">
+          <div class="section-title">
+            <h2 id="servicesTitle">Services</h2>
+            <p class="small muted">How I can help — advisory, development and security work</p>
+          </div>
+
+          <div class="services" aria-hidden="false">
+            <div class="service">
+              <h4>Secure Web Development</h4>
+              <p class="muted">Full-stack applications with Django/Python, following secure-by-design principles and OWASP best practices.</p>
+            </div>
+            <div class="service">
+              <h4>Penetration Testing & CTF</h4>
+              <p class="muted">Pentest engagements, vulnerability assessments, and CTF coaching for teams and individuals.</p>
+            </div>
+            <div class="service">
+              <h4>IoT Proof-of-Concepts</h4>
+              <p class="muted">Embedded & sensor projects — prototyping real-time monitoring like AGRI MITRA.</p>
+            </div>
+            <div class="service">
+              <h4>Security Tooling</h4>
+              <p class="muted">CLI & web tools for enumeration, scanning and reporting; automation of repetitive security tasks.</p>
+            </div>
+            <div class="service">
+              <h4>Product Strategy</h4>
+              <p class="muted">Roadmaps, MVPs and technical leadership for early-stage EdTech products.</p>
+            </div>
+            <div class="service">
+              <h4>Mentoring</h4>
+              <p class="muted">One-on-one coaching: web security fundamentals, CTF practice, and interview prep.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="panel" style="margin-top:18px" aria-labelledby="projectsTitle">
+          <div class="section-title">
+            <h2 id="projectsTitle">Selected Projects</h2>
+            <p class="small muted">Click a card for details</p>
+          </div>
+
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px">
+            <button class="pill" data-filter="all">All</button>
+            <button class="pill" data-filter="web">Web</button>
+            <button class="pill" data-filter="iot">IoT</button>
+            <button class="pill" data-filter="tools">Tools</button>
+            <button class="pill" data-filter="research">Research</button>
+          </div>
+
+          <div class="projects-grid" id="projectsGrid" role="list">
+            <!-- Project 1 -->
+            <article class="project-card" role="listitem" tabindex="0" data-tags="web,product" data-id="p-tapeflicker">
+              <h3>Tapeflicker — EdTech Platform</h3>
+              <p class="muted">Founder & lead developer — created product roadmap, initial Django platform and content pipelines.</p>
+              <div class="project-tags"><span class="tag">Django</span><span class="tag">Product</span><span class="tag">EdTech</span></div>
+            </article>
+
+            <!-- Project 2 -->
+            <article class="project-card" role="listitem" tabindex="0" data-tags="iot,research" data-id="p-agri">
+              <h3>AGRI MITRA — IoT Soil Monitor</h3>
+              <p class="muted">Real-time soil moisture monitoring with alerts and dashboard prototype.</p>
+              <div class="project-tags"><span class="tag">IoT</span><span class="tag">Sensors</span></div>
+            </article>
+
+            <!-- Project 3 -->
+            <article class="project-card" role="listitem" tabindex="0" data-tags="research" data-id="p-lifi">
+              <h3>LIFI — Light-based Data Link</h3>
+              <p class="muted">Proof-of-concept for visible-light communication between microcontrollers.</p>
+              <div class="project-tags"><span class="tag">Embedded</span><span class="tag">Research</span></div>
+            </article>
+
+            <!-- Project 4 -->
+            <article class="project-card" role="listitem" tabindex="0" data-tags="tools,security" data-id="p-tools">
+              <h3>Security Tools (Python)</h3>
+              <p class="muted">CLI enumeration and scanning tools for red-team practice and reporting automation.</p>
+              <div class="project-tags"><span class="tag">Python</span><span class="tag">CTF</span></div>
+            </article>
+
+            <!-- Project 5 -->
+            <article class="project-card" role="listitem" tabindex="0" data-tags="web,devops" data-id="p-chat">
+              <h3>Chai's Django Project</h3>
+              <p class="muted">Tutorial project covering env setup, views, templates, and deployment basics.</p>
+              <div class="project-tags"><span class="tag">Django</span><span class="tag">Tutorial</span></div>
+            </article>
+
+            <!-- Project 6 (placeholder more) -->
+            <article class="project-card" role="listitem" tabindex="0" data-tags="web" data-id="p-others">
+              <h3>Various Freelance & University Projects</h3>
+              <p class="muted">Responsive websites, small webapps and student projects in collaboration with peers.</p>
+              <div class="project-tags"><span class="tag">HTML/CSS</span><span class="tag">JavaScript</span></div>
+            </article>
+          </div>
+        </section>
+
+        <!-- CASE STUDIES -->
+        <section id="case-studies" class="panel" style="margin-top:18px" aria-labelledby="casesTitle">
+          <div class="section-title">
+            <h2 id="casesTitle">Case Studies</h2>
+            <p class="small muted">In-depth outcomes from selected projects</p>
+          </div>
+
+          <div class="case-grid">
+            <div class="case">
+              <h3>Tapeflicker — Launching an EdTech MVP</h3>
+              <p class="muted">Problem: Students needed structured revision content. Solution: Built a lightweight Django platform for student-generated content with role-based access. Outcome: Prototype shipped and piloted with 40+ students.</p>
+              <ul style="margin-top:10px;color:var(--muted)">
+                <li>Responsibilities: Product design, backend, deployment, initial marketing.</li>
+                <li>Tech: Django, PostgreSQL, Docker (local dev), simple CI workflow.</li>
+              </ul>
+            </div>
+
+            <div class="case">
+              <h3>AGRI MITRA — Low-cost soil moisture alert</h3>
+              <p class="muted">Built a microcontroller-based sensor network with cloud dashboard for small farms to monitor soil moisture and receive SMS/email alerts.</p>
+              <ul style="margin-top:10px;color:var(--muted)">
+                <li>Result: Real-time dashboard prototype demo and actionable alerts for irrigation scheduling.</li>
+                <li>Tech: ESP32, MQTT, lightweight dashboard (Flask prototype).</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills" class="panel" style="margin-top:18px" aria-labelledby="skillsTitle">
+          <div class="section-title">
+            <h2 id="skillsTitle">Skills & Tools</h2>
+            <p class="small muted">Technical proficiency and hands-on tools</p>
+          </div>
+
+          <div class="grid-2">
+            <div>
+              <h4>Core skills</h4>
+              <div style="margin-top:8px">
+                <div class="small muted">Python</div>
+                <div class="skill-bar"><div class="fill" data-value="92"></div></div>
+
+                <div class="small muted" style="margin-top:8px">Django & REST</div>
+                <div class="skill-bar"><div class="fill" data-value="88"></div></div>
+
+                <div class="small muted" style="margin-top:8px">Web Security (OWASP)</div>
+                <div class="skill-bar"><div class="fill" data-value="85"></div></div>
+
+                <div class="small muted" style="margin-top:8px">Networking & Protocols</div>
+                <div class="skill-bar"><div class="fill" data-value="80"></div></div>
+              </div>
+            </div>
+
+            <div>
+              <h4>Tools & Platforms</h4>
+              <div style="margin-top:8px;color:var(--muted)">
+                <div class="pill">Git</div>
+                <div class="pill">Docker</div>
+                <div class="pill">PostgreSQL</div>
+                <div class="pill">Metasploit</div>
+                <div class="pill">Burp Suite</div>
+                <div class="pill">TryHackMe</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- BLOG -->
+        <section id="blog" class="panel" style="margin-top:18px" aria-labelledby="blogTitle">
+          <div class="section-title">
+            <h2 id="blogTitle">Latest posts</h2>
+            <p class="small muted">Short insights and tutorials</p>
+          </div>
+
+          <div class="blog-grid">
+            <article class="post">
+              <h4>How to structure a secure Django project</h4>
+              <p class="muted">Opinionated checklist and minimal template to bootstrap secure applications for students and early-stage startups.</p>
+            </article>
+
+            <article class="post">
+              <h4>Beginner's guide to CTFs — Where to start</h4>
+              <p class="muted">Step-by-step learning path for someone new to capture-the-flag challenges.</p>
+            </article>
+
+            <article class="post">
+              <h4>From sensor to dashboard: building AGRI MITRA</h4>
+              <p class="muted">A technical walkthrough of the IoT stack used in a soil moisture monitoring prototype.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="panel" style="margin-top:18px" aria-labelledby="contactTitle">
+          <div class="section-title">
+            <h2 id="contactTitle">Contact & Hire</h2>
+            <p class="small muted">Serious offers only — please include scope, timeline and budget</p>
+          </div>
+
+          <div class="contact-grid">
+            <div>
+              <form id="contactForm" novalidate>
+                <label for="name">Name</label>
+                <input id="name" name="name" required placeholder="Your full name" />
+
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required placeholder="you@example.com" />
+
+                <label for="subject">Subject</label>
+                <input id="subject" name="subject" placeholder="Short subject (eg: Internship / Freelance / Hire)" />
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required placeholder="Project details, deliverables, timeline and budget..."></textarea>
+
+                <!-- honeypot (anti-spam) -->
+                <label class="hidden" for="website">Website</label>
+                <input id="website" name="website" class="hidden" autocomplete="off" />
+
+                <div style="margin-top:12px;display:flex;gap:8px">
+                  <button class="btn" type="submit">Send message</button>
+                  <a class="btn-ghost" href="mailto:contact@example.com">Email: contact@example.com</a>
+                </div>
+
+                <div id="formMsg" class="small" style="margin-top:10px"></div>
+              </form>
+            </div>
+
+            <aside class="panel" aria-label="Contact info">
+              <h3 style="margin-top:0">Get in touch</h3>
+              <p class="muted">Prefer email? contact@example.com</p>
+              <p class="muted">Based: India</p>
+              <h4 style="margin-top:10px">Availability</h4>
+              <p class="muted">Open to internships, freelance projects and serious full-time offers.</p>
+
+              <div style="margin-top:12px">
+                <h4>Pricing guide (indicative)</h4>
+                <p class="muted">Hourly consulting, fixed-price projects or retainers — contact with scope and I'll provide a formal quote.</p>
+                <div style="margin-top:8px"><span class="pill">Serious offers only</span></div>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <footer>
+          <div>Made with ❤️ by Yash Bhosale • © <span id="year"></span> • <span class="small muted">Available for hire — serious offers only.</span></div>
+        </footer>
+      </section>
+
+      <!-- RIGHT COLUMN: Sidebar -->
+      <aside>
+        <div class="panel">
+          <h3 style="margin-top:0">Quick profile</h3>
+          <p class="muted">Yash Bhosale — B.E. IT student (IIIT Pune), cybersecurity learner, founder of Tapeflicker. Focus: secure web apps, tooling, IoT POCs.</p>
+
+          <div style="margin-top:12px">
+            <h4 style="margin:0 0 8px 0">Contact</h4>
+            <div class="small muted">Email: contact@example.com</div>
+            <div class="small muted">Location: India</div>
+          </div>
+
+          <div style="margin-top:14px">
+            <h4 style="margin:0 0 8px 0">Stats</h4>
+            <div class="small muted">Projects: 20+</div>
+            <div class="small muted">CTFs: Ongoing</div>
+            <div class="small muted">Certifications: Multiple</div>
+          </div>
+        </div>
+
+        <div class="panel" style="margin-top:12px">
+          <h4 style="margin-top:0">Testimonials</h4>
+          <div class="testimonial" style="margin-top:8px">
+            <div style="width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#021219">A</div>
+            <div>
+              <strong>Mentor — ABC</strong>
+              <div class="quote muted">"Yash is an enthusiastic learner with a knack for turning concepts into working prototypes quickly."</div>
+            </div>
+          </div>
+
+          <div class="testimonial" style="margin-top:8px">
+            <div style="width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#60a5fa,#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:800;color:#021219">B</div>
+            <div>
+              <strong>Peer — XYZ</strong>
+              <div class="quote muted">"Practical, hardworking and always willing to help on security problems."</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel" style="margin-top:12px">
+          <h4 style="margin-top:0">Quick links</h4>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+            <a class="btn-ghost" href="#">Resume (PDF)</a>
+            <a class="btn-ghost" href="#">GitHub</a>
+            <a class="btn-ghost" href="#">LinkedIn</a>
+            <a class="btn-ghost" href="#">TryHackMe profile</a>
+          </div>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <!-- Modal (project detail) -->
+  <div id="modalBackdrop" class="modal-backdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="close" aria-label="Close" id="modalClose">&times;</button>
+      <h3 id="modalTitle">Project title</h3>
+      <p id="modalDesc" class="muted">Project description goes here.</p>
+
+      <div style="margin-top:12px">
+        <strong>Tech stack</strong>
+        <div id="modalTech" class="muted" style="margin-top:6px">Python, Django, PostgreSQL</div>
+      </div>
+
+      <div style="margin-top:12px;display:flex;gap:8px">
+        <a class="btn" id="modalDemo" href="#" target="_blank" rel="noopener">Live demo</a>
+        <a class="btn-ghost" id="modalRepo" href="#" target="_blank" rel="noopener">Repository</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // =========================
+    // Basic utilities & state
+    // =========================
+    const yearEl = document.getElementById('year'); if(yearEl) yearEl.textContent = new Date().getFullYear();
+
+    // Mobile nav toggle (basic)
+    const mobileToggle = document.getElementById('mobileToggle');
+    mobileToggle.addEventListener('click', () => {
+      const nav = document.querySelector('nav');
+      const expanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+      mobileToggle.setAttribute('aria-expanded', String(!expanded));
+      if(!expanded){ nav.style.display = 'flex'; } else { nav.style.display = ''; }
+    });
+
+    // =========================
+    // Projects filter & modal
+    // =========================
+    const filterButtons = document.querySelectorAll('[data-filter]');
+    const projectsGrid = document.getElementById('projectsGrid');
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const f = btn.getAttribute('data-filter');
+        document.querySelectorAll('.project-card').forEach(card => {
+          if(f === 'all') { card.style.display='flex'; return; }
+          const tags = (card.getAttribute('data-tags') || '').split(',');
+          if(tags.includes(f)) card.style.display='flex'; else card.style.display='none';
+        });
+      });
+    });
+
+    // Project modal data map
+    const PROJECTS = {
+      'p-tapeflicker': {
+        title: 'Tapeflicker — EdTech Platform',
+        desc: 'End-to-end EdTech product: content management, student dashboards, and learning workflows. I led product strategy and built the initial Django-based MVP.',
+        tech: 'Django, Python, PostgreSQL, Docker, JavaScript',
+        demo: '#',
+        repo: '#'
+      },
+      'p-agri': {
+        title: 'AGRI MITRA — IoT Soil Monitor',
+        desc: 'Sensor network prototype for monitoring soil moisture with a lightweight dashboard and notification pipeline.',
+        tech: 'ESP32, MQTT, Flask prototype, SQLite',
+        demo: '#',
+        repo: '#'
+      },
+      'p-lifi': {
+        title: 'LIFI — Light-based Data Link',
+        desc: 'Research proof-of-concept for visible-light communication between microcontrollers for short-range data transfer.',
+        tech: 'Microcontrollers, optics, embedded C',
+        demo: '#',
+        repo: '#'
+      },
+      'p-tools': {
+        title: 'Security Tools (Python)',
+        desc: 'Collection of CLI utilities for enumeration, scanning and report generation used during CTF practice and pentest simulations.',
+        tech: 'Python, argparse, sockets, threading',
+        demo: '#',
+        repo: '#'
+      },
+      'p-chat': {
+        title: 'Chai\'s Django Project — Tutorial',
+        desc: 'Beginner-friendly Django tutorial covering setup, views, templates and static asset handling with a deployable project scaffold.',
+        tech: 'Django, HTML/CSS, JS',
+        demo: '#',
+        repo: '#'
+      },
+      'p-others': {
+        title: 'Various University & Freelance Projects',
+        desc: 'Responsive websites, small webapps and collaborative student projects across web and embedded domains.',
+        tech: 'HTML, CSS, JS, Python',
+        demo: '#',
+        repo: '#'
+      }
+    };
+
+    const modalBackdrop = document.getElementById('modalBackdrop');
+    const modalClose = document.getElementById('modalClose');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalTech = document.getElementById('modalTech');
+    const modalDemo = document.getElementById('modalDemo');
+    const modalRepo = document.getElementById('modalRepo');
+
+    function openModalFor(id){
+      const data = PROJECTS[id];
+      if(!data) return;
+      modalTitle.textContent = data.title;
+      modalDesc.textContent = data.desc;
+      modalTech.textContent = data.tech;
+      modalDemo.href = data.demo;
+      modalRepo.href = data.repo;
+      modalBackdrop.style.display = 'flex';
+      modalBackdrop.setAttribute('aria-hidden','false');
+      // trap focus (simple)
+      modalClose.focus();
+    }
+    function closeModal(){
+      modalBackdrop.style.display = 'none';
+      modalBackdrop.setAttribute('aria-hidden','true');
+    }
+
+    document.querySelectorAll('.project-card').forEach(card=>{
+      card.addEventListener('click', ()=> openModalFor(card.getAttribute('data-id')));
+      card.addEventListener('keydown', e=>{ if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModalFor(card.getAttribute('data-id')); } });
+    });
+    modalClose.addEventListener('click', closeModal);
+    modalBackdrop.addEventListener('click', (e)=>{ if(e.target === modalBackdrop) closeModal(); });
+    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeModal(); });
+
+    // =========================
+    // Skill bars animation on scroll
+    // =========================
+    const skillFills = document.querySelectorAll('.skill-bar .fill');
+    function animateSkills(){
+      const rect = document.getElementById('skills').getBoundingClientRect();
+      if(rect.top < window.innerHeight - 80){
+        skillFills.forEach(f => {
+          const v = f.getAttribute('data-value') || 70;
+          f.style.width = v + '%';
+        });
+        window.removeEventListener('scroll', animateSkills);
+      }
+    }
+    window.addEventListener('scroll', animateSkills);
+    // run once in case already visible
+    setTimeout(animateSkills, 300);
+
+    // =========================
+    // Form handling (frontend only)
+    // =========================
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const website = document.getElementById('website').value.trim(); // honeypot
+      const formMsg = document.getElementById('formMsg');
+
+      if(website) { // spam bot filled honeypot
+        formMsg.textContent = 'Submission blocked.';
+        return;
+      }
+
+      if(!name || !email || !message){
+        formMsg.textContent = 'Please fill required fields.';
+        return;
+      }
+
+      // Build mailto fallback
+      const subject = encodeURIComponent((document.getElementById('subject').value || 'Contact from portfolio') + ' — ' + name);
+      let body = 'Name: ' + name + '\nEmail: ' + email + '\n\n';
+      body += message;
+      const mailto = `mailto:contact@example.com?subject=${subject}&body=${encodeURIComponent(body)}`;
+
+      // Try to open mail client
+      window.location.href = mailto;
+      formMsg.textContent = 'Attempting to open your mail client. If nothing happens, email: contact@example.com';
+    });
+
+    // =========================
+    // Resume download (placeholder)
+    // =========================
+    const downloadResumeBtn = document.getElementById('downloadResumeBtn');
+    downloadResumeBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      // Create a minimal resume text file. Replace with real PDF if available.
+      const txt = `Yash Bhosale - Resume\n\nEmail: contact@example.com\nLocation: India\nEducation: B.E. IT (IIIT Pune) 2022-2026\nSkills: Python, Django, Web Security, Networking, IoT\nProjects: Tapeflicker, AGRI MITRA, LIFI\nCertifications: CompTIA Security+, Google Cybersecurity Professional Certificate\n\nMore: https://github.com/yourusername`;
+      const blob = new Blob([txt], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = 'Yash_Bhosale_Resume.txt'; document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(()=> URL.revokeObjectURL(url), 1500);
+    });
+
+    // =========================
+    // Accessibility: reduce motion if user prefers
+    // =========================
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if(reduceMotion.matches){
+      document.querySelectorAll('*').forEach(el => { el.style.transition = 'none'; });
+    }
+
+    // =========================
+    // Small enhancement: smooth scroll for internal links
+    // =========================
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', function(e){
+        const href = this.getAttribute('href');
+        if(href === '#') return;
+        const target = document.querySelector(href);
+        if(target){
+          e.preventDefault();
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+          history.replaceState(null,'',href);
+        }
+      });
+    });
+
+    // =========================
+    // Keyboard shortcuts (optional)
+    // =========================
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'g' && (e.ctrlKey || e.metaKey)){ // ctrl/cmd + g jump to contact
+        e.preventDefault();
+        document.getElementById('contact').scrollIntoView({behavior:'smooth'});
+      }
+    });
+  </script>
+</body>
+</html>
